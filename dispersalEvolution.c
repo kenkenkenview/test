@@ -28,7 +28,6 @@ int main(){
 
     for(gen=0;gen<500;gen++){
         count = 0.0;
-        sum = 0.0;
         for(i=0;i<100;i++){
             p[i].nO=0;
             if(p[i].Occupied==true){
@@ -36,9 +35,11 @@ int main(){
                 count++;
             }
         }
-        if(count!=0.00000000){
-        printf("%dst generation's average is %Lf\n",gen+1,sum/count);
-        }
+        if(count!=0.000000){
+        printf("%dst generation's average is %Lf\nsum=%Lf,count=%Lf\n\n",gen+1,sum/count,sum,count);
+        }else{
+	printf("%dst generation's sum=%Lf,count=%Lf\n",gen+1,sum,count);
+	}
         for(i=0;i<100;i++){
             if((long double)rand()/RAND_MAX<p[i].parent){
                 for(j=0;j<4;j++){
@@ -64,12 +65,12 @@ int main(){
                 p[i].parent=p[i].offspring[rand()%p[i].nO];
             }
         }
+        sum=0.0;
 
 
     }
 
-
+    printf("end\n");
     return 0;
 
 }
-
