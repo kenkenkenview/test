@@ -36,7 +36,7 @@ int main(){
                 count++;
             }
         }
-        if(count!=0.0){
+        if(count!=0.00000000){
         printf("%dst generation's average is %Lf\n",gen+1,sum/count);
         }
         for(i=0;i<100;i++){
